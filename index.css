@@ -47,6 +47,7 @@ ul {
     border: 1px black solid; 
     background: black;
     padding: 5px;
+    cursor:pointer;
 
     
 }

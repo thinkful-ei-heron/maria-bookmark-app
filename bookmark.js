@@ -1,6 +1,6 @@
 console.log(`bookmarks JS working`)
 
-const bookmarkBinder = (function () {
+const bookmark = (function () {
     
     const generateBookmarkForm= function () {
         return ` <form class="bookmark-form">
@@ -106,8 +106,11 @@ const bookmarkBinder = (function () {
 
     const render = function () {
         renderError();
-        const bookmarkString = generateBookmarkString(items);
-            $('.js-add-form').html(bookmarkString);// insert that HTML into the DOM
+        const bookmarkString = items.map(item => generateBookmarkResults(item));
+        $('.js-add-form').html(bookmarkString);
+        
+        // generateBookmarkString(items);
+        //     $('.js-add-form').html(bookmarkString);// insert that HTML into the DOM
     };
 
 
@@ -162,10 +165,6 @@ const bookmarkBinder = (function () {
     return {
         render,
         bindEventListeners
-    }
-
-
-
-
+    };
 
 }());
