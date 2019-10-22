@@ -1,54 +1,45 @@
 <!DOCTYPE html>
-    <head>
-        <title>My Bookmarks</title>
-        <link href="https://fonts.googleapis.com/css?family=Euphoria+Script&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="index.css">
-    </head>
-    <body>
-        <div class="god-container">
-        <header class="title-of-page">
-          <h1>My Bookmarks</h1>
-          <hr class="style-eight"></hr>
-        </header>
+<html lang="en">
 
-        <nav>
-          <ul class="flex-container-for-buttons">
-            <li>
-                <button class="add-new-bookmark-button">Add Bookmark</button>
-                <li>
-                    <select id="select-rating" name="filter-by">
-                        <option value="5 or more">5 stars</option>
-                        <option value="4 or more">4 or more stars</option>
-                        <option value="3 or more">3 or more stars</option>
-                        <option value="2 or more">2 or more stars</option>
-                        <option value="1 or more">1 or more stars</option>
-                        <option value="0 or more">Display All</option>
-                    </select>
-              <button class="change" type="submit">Filter By Stars</button>
-             </li>
-            </li>
-            
-          </ul>
-        </nav>
-          
-        <div class="error-shows-up-here"></div>
-        <div class="js-add-form"></div>
-        <div class="js-generated-bookmark"></div>
-               
-        
-        <div class="js-add-edit-form">
-               
-        </div>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bookmarks App</title>
+    <link rel="shortcut icon" href="#">
+    <link href="https://fonts.googleapis.com/css?family=Satisfy&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quattrocento+Sans&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+</head>
+ 
+<body>
+    <header>
+        <h1>My Bookmarks</h1>
+    </header> 
 
-   
-                
-                </div>
-        </div>
-         </div>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="store.js"></script>
-        <script src="bookmark.js"></script>
-        <script src="api.js"></script>
-        <script src="index.js" async defer></script>
-    </body>
+
+    <section class="bookmark-list"> <h3>List of Saved Bookmarks</h3></section>
+     <!-- results go here -->
+    <section class="form-here"></section>
+    <!-- form goes here -->
+    <section class= "first-container">
+        <button type="button" class="addBookmark">Add Bookmark</button>
+
+        <label for="select-rating"></label>
+        <select class="select-rating" name="select-rating">
+          <option selected disabled>Select Rating</option>
+          <option value="5 or more">5 stars</option>
+          <option value="4 or more">4 or more stars</option>
+          <option value="3 or more">3 or more stars</option>
+          <option value="2 or more">2 or more stars</option>
+          <option value="1 or more">1 or more stars</option>
+          <option value="0 or more">Display All</option>
+        </select>
+    </section>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/cuid/1.3.8/browser-cuid.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="module" src="index.js"></script>
+
+</body>
 </html>

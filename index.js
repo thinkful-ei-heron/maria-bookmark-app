@@ -1,16 +1,18 @@
-console.log(`index.js is working`);
+import api from './api.js';
+import store from './store.js';
+import bookmarklist from './bookmarklist.js';
+
 
 const main = function () {
-    bookmark.bindEventListeners();
-    bookmark.render();
-    
-    api.getItems()
-      .then((items) => {
-        items.forEach((item) => store.addItem(item));
-        shoppingList.render();
-      });
+  api.getItems()
+    .then(items => {
+      console.log('items:', items);
+      items.map(item => {
+        store.addItems(item);
+      })
+      bookmarklist.render();
+      bookmarklist.bindEventListeners();
+    })
+};
 
-  };
-  
-  $(main);
-  
+$(main);

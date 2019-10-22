@@ -1,100 +1,64 @@
-console.log(`api js working`)
-const api = function () {
-    let BASE_URL = 'https://thinkful-list-api.herokuapp.com/maria';
+const BASE_URL = "https://thinkful-list-api.herokuapp.com/maria";
 
-    //  @param {string} url 
-    //  @param {object} options 
-    //  @returns {Promise} 
-
-
-    const listApiFetch = function (...args) {
-  // setup var in scope outside of promise chain
-  let error;
-  return fetch(...args)
-    .then(res => {
-      if (!res.ok) {
-        // if response is not 2xx, start building error object
-        error = { code: res.status };
-
-        // if response is not JSON type, place statusText in error object and
-        // immediately reject promise
-        if (!res.headers.get('content-type').includes('json')) {
-          error.message = res.statusText;
-          return Promise.reject(error);
-        }
-      }
-      // otherwise, return parsed JSON
-      return res.json();
-    })
-    .then(data => {
-      // if error exists, place the JSON message into the error object and 
-      // reject the Promise with your error object so it lands in the next 
-      // catch.  IMPORTANT: Check how the API sends errors -- not all APIs
-      // will respond with a JSON object containing message key
-      if (error) {
-        error.message = data.message;
-        return Promise.reject(error);
-      }
-
-      // otherwise, return the json as normal resolved Promise
-      return data;
-    });
+const apiFetch = function (...args) {
+   
+    let error;
+    return fetch(...args)
+        .then(res => {
+            if (!res.ok) {
+                error = { code: res.status };
+                if (!res.headers.get('content-type').includes('json')) {
+                    error.message = res.statusText;
+                    return Promise.reject(error);
+                }
+            }
+            return res.json();
+        })
+        .then(data => {
+            if (error) {
+                error.message = data.message;
+                return Promise.reject(error);
+            }
+            return data;
+        });
 };
 
 const getItems = function () {
-  return listApiFetch(`${BASE_URL}/items`);
+    return apiFetch(`${BASE_URL}/bookmarks`);
 };
 
-const createItem = function (name) {
-  const newItem = JSON.stringify({ name });
-  return listApiFetch(`${BASE_URL}/items`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: newItem
-  });
+const createItem = function (title, url, desc, rating) {
+    let data = {
+        title: title,
+        url: url,
+        desc: desc, 
+        rating: rating
+    };
+    return apiFetch(`${BASE_URL}/bookmarks`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+    });
 };
 
 const updateItem = function (id, updateData) {
-  const newData = JSON.stringify(updateData);
-  return listApiFetch(`${BASE_URL}/items/${id}`, {
-    method: 'PATCH',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: newData
-  });
+    return apiFetch(`${BASE_URL}/bookmarks/${id}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(updateData)
+    });
 };
 
 const deleteItem = function (id) {
-  return listApiFetch(BASE_URL + '/items/' + id, {
-    method: 'DELETE'
-  });
+    return apiFetch(`${BASE_URL}/bookmarks/${id}`, {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' }
+    });
 };
 
- 
-
-    
-
- 
-
-    return {
-        getItems,
-        updateItem,
-        createItem,
-        deleteItem
-
-    };   
+export default {
+    createItem,
+    deleteItem,
+    updateItem,
+    getItems
 };
-
-// jQuery is working
-// window.onload = function() {
-//   if (window.jQuery) {  
-//       // jQuery is loaded  
-//       alert("Yeah!");
-//   } else {
-//       // jQuery is not loaded
-//       alert("Doesn't Work");
-//   }
-// }

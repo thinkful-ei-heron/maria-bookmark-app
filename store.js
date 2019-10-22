@@ -1,60 +1,37 @@
-// 'use-strict'
+const findById = function(id) {
+  return this.bookmarks.find(item => item.id === id);
+};
 
-// console.log(`store js is working`)
+const addItems = function(item) {
+  this.bookmarks.push(item);
+};
 
-// const store = {
-//     bookmarks: [
-//       {
-//         id: 'x56w',
-//         title: 'Title 1',
-//         rating: 3,
-//         url: 'http://www.title1.com',
-//         description: 'lorem ipsum dolor sit',
-//         expanded: false
-//       },
-//       {
-//         id: '6ffw',
-//         title: 'Title 2',
-//         rating: 5,
-//         url: 'http://www.title2.com',
-//         description: 'dolorum tempore deserunt',
-//         expanded: false
-//       } 
-//     ],
-//     adding: false,
-//     error: null,
-//     filter: 0
-//   };
+const findAndDelete = function(id) {
+  this.bookmarks = this.bookmarks.filter(item => item.id !== id);
+};
 
-const store = (function () {
-    const bookmarkStore = [];
+const findAndUpdate = function(id, newData) {
+  let updatedItem = this.findById(id);
+  Object.assign(updatedItem, newData);
+};
 
-    const bookmarks = [];
+const setError = function(error) {
+  this.error = error;
+};
 
-    const findById = function(id) {
-        return this.items.find(item => item.id === id);
-    };
+function addingBk() { 
+  this.adding = !this.adding; 
+};
 
-    const addItem = function(item) {
-        this.bookmarkStore.push(item);
-    };
-    
-    
-    const findAndDelete = function(id) {
-        this.bookmarkStore = this.bookmarkStore.filter(item => item.id !== id);
-    };
-    
-    
-    
-    
-    
-    return  {
-        bookmarks,
-        bookmarkStore,     
-        editing: false,
-        addItem,
-        findById,
-        findAndDelete,
-    };
-
-})();
+export default {
+  bookmarks: [],
+  adding: false,
+  error: null,
+  filterRating: 0,
+  findById,
+  addingBk,
+  addItems,
+  setError,
+  findAndDelete,
+  findAndUpdate
+};
