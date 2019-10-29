@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bookmarks App</title>
+    <link rel="shortcut icon" href="#">
+    <link href="https://fonts.googleapis.com/css?family=Satisfy&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quattrocento+Sans&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+</head>
+ 
+<body>
+    <header>
+        <h1>My Bookmarks</h1>
+    </header> 
+
+
+    <section class="bookmark-list"> <h3>List of Saved Bookmarks</h3></section>
+     <!-- results go here -->
+    <section class="form-here"></section>
+    <!-- form goes here -->
+    <section class= "first-container">
+        <button type="button" class="addBookmark">Add Bookmark</button>
+
+        <label for="select-rating"></label>
+        <select class="select-rating" name="select-rating">
+          <option selected disabled>Select Rating</option>
+          <option value="5 or more">5 stars</option>
+          <option value="4 or more">4 or more stars</option>
+          <option value="3 or more">3 or more stars</option>
+          <option value="2 or more">2 or more stars</option>
+          <option value="1 or more">1 or more stars</option>
+          <option value="0 or more">Display All</option>
+        </select>
+    </section>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/cuid/1.3.8/browser-cuid.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="module" src="index.js"></script>
+
+</body>
+</html>

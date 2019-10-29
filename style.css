@@ -1,0 +1,141 @@
+* {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Quattrocento Sans', sans-serif;
+    background-color: rgb(235, 232, 232);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+  }
+  
+  h1 {
+    font-family: 'Satisfy', cursive;
+    font-size: 70px;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+
+  }
+  
+  .first-container {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-self:center;   
+
+
+  
+  }
+  .select-rating {
+    font-size: 20px;
+    background-color: #89cbe1;
+    margin-top: 5px;
+
+
+  }
+  
+  .addBookmark {
+    font-size: 20px;
+    background-color: #89cbe1;
+  
+  
+  }
+  
+  #bookmark-form {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-self: center;
+  }
+  
+  .form-btn {
+    font-size: 20px;
+    background-color: #89cbe1;
+  }
+  
+  .form-here {
+    align-self: center;
+  }
+  
+  .bk-title, .bk-url, .bk-desc, .bk-rating {
+    margin-bottom: 20px;
+    font-size: 15px;
+    line-height: 1.5;
+    
+  }
+  
+  .bk-rating {
+    font-size: 20px;
+    background-color: #89cbe1;
+  }
+  
+  h2 {
+    font-size: 25px;
+  }
+  
+  .bookmark-list {
+  list-style-type: none;
+  align-self: center;
+
+  }
+  
+  #title {
+
+    font-weight: bold;
+    font-size: 25px;
+    color: black;
+  }
+  
+  #rating {
+    border: 1px black solid;
+  }
+  
+  .new-bk {
+    font-family: 'Quattrocento Sans', sans-serif;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border: 1px  #89cbe1 solid;
+    background: #89cbe1;
+  }
+  
+  
+  .delete-bookmark-button {
+    font-size: 20px;
+    background-color: grey;
+    width: 50%;
+    align-self: center;
+
+  }
+  
+  li {
+    font-size: 20px;
+    padding: 10px;
+    align-self: center;
+    position: relative;
+    left: -15px;
+  }
+  
+  
+   @media only screen and (min-width: 500px) {
+    .first-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+  
+  } 
+
+  a {
+    border: 1px solid  #89cbe1;
+    background:  #89cbe1;
+    text-decoration: none;
+    color: black;
+    padding:5px;
+  }
+  
+  
