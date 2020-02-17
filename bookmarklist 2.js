@@ -13,17 +13,7 @@ function generateBookmarkForm() {
     <label for="desc">
         <textarea class="bk-desc" name="desc" type="text" placeholder="add description (optional)"></textarea>
     </label>
-    <label for="rating">
-        
-        <select class="bk-rating" name="rating">
-            <option selected disabled>Select Rating</option>
-            <option value="5 or more">5 stars</option>
-            <option value="4 or more">4 stars</option>
-            <option value="3 or more">3 stars</option>
-            <option value="2 or more">2 stars</option>
-            <option value="1 or more">1 stars</option>
-        </select>
-    </label>
+
     <button class= "form-btn" type="submit">Submit</button>
     </form>
     `
@@ -35,8 +25,8 @@ function generateItemElement(item) {
             <ul class="new-bk" data-item-id="${item.id}">
                 <li id="title">${item.title}</li>
                 <li>Rating: ${item.rating}</li>
-                <li>${item.desc}</li>
                 <li><a href="${item.url}">Visit Page</a></li>
+                <li>${item.desc}</li>
                 <button class="delete-bookmark-button">Delete Bookmark</button>
             </ul>`;
     }

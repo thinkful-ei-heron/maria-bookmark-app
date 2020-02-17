@@ -2,12 +2,6 @@
     box-sizing: border-box;
   }
 
-
-  a {
-    align-self: auto;
-    border-radius: 5px;
-
-  }
   
   body {
     font-family: 'Quattrocento Sans', sans-serif;
@@ -26,18 +20,12 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 30%;
-    max-height: 1000px;
-  }
-
-  label {
-    display: flex;
-    justify-content: center;
+    width: 47%
   }
 
   h1 {
     font-family: 'Satisfy', cursive;
-    font-size: 90px;
+    font-size: 70px;
     color: rgb(38, 34, 34);
     font-weight: bold;
     text-align: center;
@@ -56,20 +44,18 @@
     margin-top: 5px;
     align-self: center;
     border: 1px solid  rgb(21, 20, 20);
-    box-shadow:  -4px 4px 0px rgb(21, 20, 20);
 
 
   }
   
   .addBookmark {
+   
     font-size: 15px;
     margin-right: 10px;
     align-self: center;
     width: 90px;
     border-radius: 4px;
     border: 1px solid  rgb(21, 20, 20);
-    box-shadow:  -4px 4px 0px rgb(21, 20, 20);
-    margin-bottom: 10px;
   
   
   }
@@ -80,7 +66,6 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-self: center;
-    border-bottom: solid 3px black;
   }
   
   .form-btn {
@@ -90,19 +75,16 @@
     width: 90px;
     border-radius: 4px;
     border: 1px solid rgb(21, 20, 20);
-    box-shadow:  -4px 4px 0px rgb(21, 20, 20);
-
   }
   
   .form-here {
     align-self: center;
   }
   
-  .bk-title, .bk-url, .bk-desc, .bk-rating{
+  .bk-title, .bk-url, .bk-desc, .bk-rating {
     margin-bottom: 20px;
     font-size: 15px;
     line-height: 1.5;
-    box-shadow:  -4px 4px 0px rgb(21, 20, 20);
     
   }
   
@@ -112,7 +94,7 @@
   }
   
   h2 {
-    font-size: 15px;
+    font-size: 25px;
   }
   
   .bookmark-list {
@@ -123,44 +105,36 @@
   
   #title {
 
-    font-weight: bolder;
+    font-weight: bold;
     font-size: 25px;
     color: black;
-    /* border-top: 1px solid black; */
-    border-bottom: 3px solid rgba(0, 0, 0, 0.735);
-    border-radius: 5px;
-    padding: 12px;
-   
-
   }
   
  
   .new-bk {
+    font-family: 'Quattrocento Sans', sans-serif;
     list-style-type: none;
     display: flex;
+    justify-content: center;
     flex-direction: column;
-    border: 2px solid black;
-    /* box-shadow: -4px 4px 0px rgb(21, 20, 20); */
-    border-radius: 10px;
-    padding: 26px;
-    /* justify-content: center; */
-    align-items: center;
+    background:grey;
   }
   
+  
   .delete-bookmark-button {
-    font-size: 15px;
-    width:  80%;
-    margin-bottom: 5px;
-    border: black solid 1px;
-    background-color: transparent;
-    border-radius: 5px;
+    font-size: 20px;
+    background-color: grey;
+    width: 50%;
+    align-self: center;
 
   }
   
   li {
     font-size: 20px;
     padding: 10px;
-    margin-bottom: 5px;
+    align-self: center;
+    position: relative;
+    left: -15px;
   }
   
   
@@ -174,7 +148,8 @@
   } 
 
   a {
-    border: 1px black solid;
+    border: 1px solid  #89cbe1;
+    background:  #89cbe1;
     text-decoration: none;
     color: black;
     padding:5px;
